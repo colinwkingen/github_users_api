@@ -15,6 +15,10 @@ var userRetrieval = function(user) {
     $('#user_info').append('<img src="' + user.avatar_url + '" ></img>');
   }
   $('#user_info').append("<li><h3>User name: " + user.login + ".</h3></li><br><li><h3>User Id: " + user.id + ".</h3><br></li>");
+  if (user.bio) {
+    $('#user_info').append('<li><h4>' + user.bio + '</h4></li>');
+  }
+  $('#user_info').append('<li><h4>Following ' + user.following + ' users.</h4></li><li><h4>Being followed by ' + user.followers + ' users.</h4></li>');
 };
 
 var repoRetrieval = function(info, pageNumber) {
@@ -36,7 +40,7 @@ var repoRetrieval = function(info, pageNumber) {
 
 $(document).ready(function() {
   $('#find_user').submit(function(event) {
-    $('#main_info').empty();
+    clearAll()
     event.preventDefault();
     var name = $('#name_field').val();
     var thisUser = new User(name);
