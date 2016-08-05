@@ -12,7 +12,6 @@ User.prototype.getUserInfo = function(userRetrieval){
   });
 };
 
-
 var pageNumber = 1;
 
 User.prototype.nextPage = function() {

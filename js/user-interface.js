@@ -14,6 +14,9 @@ var userRetrieval = function(user) {
   if (user.avatar_url) {
     $('#user_info').append('<img src="' + user.avatar_url + '" ></img>');
   }
+  if (user.location) {
+    $('#user_info').append('<li><h4>Location: ' + user.location + '.</h4></li>');
+  }
   $('#user_info').append("<li><h3>User name: " + user.login + ".</h3></li><br><li><h3>User Id: " + user.id + ".</h3><br></li>");
   if (user.bio) {
     $('#user_info').append('<li><h4>' + user.bio + '</h4></li>');
