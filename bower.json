@@ -1,0 +1,21 @@
+{
+  "name": "github_users_api",
+  "description": "App to return github users and repos and info",
+  "main": "gulpfile.js",
+  "authors": [
+    "Colin W Kingen"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "bootstrap": "^3.3.7"
+  }
+}
