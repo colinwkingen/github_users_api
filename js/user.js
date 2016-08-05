@@ -5,7 +5,7 @@ function User(userName) {
 }
 
 User.prototype.getRepos = function(userRetrieval){
-  $.get('https://api.github.com/users/' + this.userName +'?access_token=' + apiKey ).then(function(response){
+  $.get('https://api.github.com/users/' + this.userName + '/repos?access_token=' + apiKey ).then(function(response){
     userRetrieval(response);
   }).fail(function(error){
     console.log(error.responseJSON.message);
