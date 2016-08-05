@@ -10,3 +10,7 @@ body {
 li {
   list-style: none;
 }
+
+#next_page, #previous_page {
+  display: none;
+}

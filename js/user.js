@@ -13,10 +13,18 @@ User.prototype.getUserInfo = function(userRetrieval){
 };
 
 
+var pageNumber = 1;
+
+User.prototype.nextPage = function() {
+  pageNumber += 1;
+};
+User.prototype.previousPage = function() {
+  pageNumber -= 1;
+};
 
 User.prototype.getRepos = function(repoRetrieval){
-  $.get('https://api.github.com/users/' + this.userName + '/repos?access_token=' + apiKey ).then(function(response){
-    repoRetrieval(response);
+  $.get('https://api.github.com/users/' + this.userName  + '/repos?&page=' + pageNumber + '&access_token=' + apiKey ).then(function(response){
+    repoRetrieval(response, pageNumber);
   }).fail(function(error){
     console.log(error.responseJSON.message);
   });
