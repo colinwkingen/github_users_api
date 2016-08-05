@@ -1,4 +1,12 @@
 body {
   color: #B6B6FF;
-  background-color: #002;
+  background-color: #001;
+}
+
+.find_button {
+  margin-top: 1.8em;
+}
+
+li {
+  list-style: none;
 }
